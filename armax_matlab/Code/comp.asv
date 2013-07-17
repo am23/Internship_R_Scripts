@@ -1,0 +1,19 @@
+clear all;
+load('C:/Users/aanchal.maheshwari/Desktop/wrkk/Share-Aanchal/Matlab/Data/abc.txt');
+data=iddata(abc,[],1);
+na= 1;
+nc=1;
+sys = armax(data(1:50),[na nc]);
+K=2;
+p = predict(sys,data,K);
+plot(data(1:144),p(50:144),'c+');
+sys = armax(data(1:70),[na nc]);
+K=2;
+p = predict(sys,data,K); 
+hold on
+plot(p(70:144),'ro-');
+sys = armax(data(1:130),[na nc]);
+p = predict(sys,data,K);
+hold on;
+plot(p(130:144),'k+-');
+hold off;
