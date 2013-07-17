@@ -1,5 +1,0 @@
- g<-read.table('ec1.txt')
- g1<-ts(g,start=c(1987, 26),frequency = 52)
- k<-read.table('till200.txt')
- k1<-ts(k,start=c(1987, 26),frequency = 52)
- ts.plot(k1,g1,gpars=list(xlab="year", ylab="People", col=c("Black","Blue")))
